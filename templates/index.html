@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html style="height:100%;">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+  
+    <meta name="application-name" content="AccuSpell" />
+    <title>AccuSpell - Chinese Spelling Checker</title>
+   
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/work.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bar.css' %}" />
+
+</head>
+
+<body  class="editorTs">
+    {% csrf_token %}
+    <div id="page" style="height:100%;">
+                    <div class="_de91e2-dropZoneElement" >
+                        <div class="_de91e2-dropzone">
+                            <div class="_de91e2-dropzoneMiddleblock">Drop a text file here</div>
+                        </div>
+                    </div>
+                    <div class="_4afb5096-editor-page-content fs-hide">
+                        <!-- -->
+                        <div data-name="doc-toolbar" class="_747451-toolbar">
+                            
+                            <div class="_747451-item">
+                                <div id = "bar2_colr" class="_bar _ba2"></div>
+                                <div class="_747451-menuBlock _747451-noWrap">
+                                    <div class="_747451-toolItem _work">Submit Button</div>
+                                </div> 
+                            </div>
+                            
+                            <div class="_747451-item">
+                                <div class="_bar _ba3"></div>
+                                <div class="_747451-menuBlock _747451-noWrap">
+                                    <div class="_747451-toolItem _contact">Contact</div>
+                                </div>
+                            </div>
+                            <div class="_747451-separator"></div>
+                            
+                            <!-- <div class="_747451-item">
+                                <div class="_bar _ba4"></div>
+                                <div class="_747451-menuBlock _747451-noWrap">
+                                        <div class="_747451-toolItem _Linggle">Linggle</div>
+                                </div>   
+                            </div> -->
+
+                            <!-- <div class="_747451-item">
+                                    <div class="_bar _ba5"></div>
+                                    <div class="_747451-menuBlock _747451-noWrap">
+                                            <div class="_747451-toolItem _WriteAhead">WriteAhead</div>
+                                    </div>   
+                            </div> -->
+                           
+                        </div>
+
+
+                    <div class="_a51a502a-editor-page-editor"  >
+                            <p align="center"><img src="static/img/logo.png" alt="AccuSpell" height="25%" width="25%"></p>
+                            <div class="_af1f0d33-editor-page-scrollWrap" >
+                                <div style="height:100%">
+                                    <!-- react-empty: 803 -->
+                                   
+                                       <!-- <div class="_07439407-editor-page-editorLayout">
+                                            <div class="_12f1a8c9-editor-page-editorCol" style="transform: translateY(0px);">
+                                                <div class="_bfb86e66-editor-page-titleWrap">
+                                                    <input type="text" data-name="doc-title" class="_58bed4cb-editor-page-title"
+                                                        placeholder="Type your title" maxlength="50" value="">
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                        <div class="_07439407-editor-page-editorLayout" style="height:100%;">
+                                            <div id="editorWrapper" class="_12f1a8c9-editor-page-editorCol" >
+                                                <!--<div class="gram-ghost" gramm_editor="true" contenteditable="true" tabindex="-1"
+                                                    id="9fcdc323-7351-37fe-abca-5942d88665af" gramm_id="9fcdc323-7351-37fe-abca-5942d88665af">
+                                                    <span class="clone-val">
+                                                        <gr_block p="0,10" style="display: inline;">
+                                                            <g class="gr_ gr_44 gr-alert gr_tiny gr_gramm gr_hide gr_premium gr_disable_anim_appear"
+                                                                data-gr-id="44" id="44">I</g>
+                                                            <g class="gr_ gr_43 gr-alert gr_gramm" data-gr-id="43"
+                                                                id="43">a girls</g>.</gr_block>
+                                                    </span>
+                                                </div>-->
+                                                <textarea id="textarea" class="textarea" spellcheck="false" style="overflow:scroll" placeholder="Type or paste (⌘V) your text here."
+                                                   ></textarea>
+                                            </div>
+                                            <div class="_adbfa1e6-editor-page-cardsCol" >
+                                                <div>
+                                                    <div class="cardBaseClassName _72569e-card _72569e-cardCollapsed _72569e-animatePosition"
+                                                      >
+                                                        <div>
+                                                            <div>
+                                                                <div class="_ed4374-header">
+                                                                    <div class="_ed4374-headerButtons">
+                                                                        <!--<span class="_ed4374-buttonWrapper _ed4374-headerButton _ed4374-btnExpand"
+                                                                            role="button"></span>
+                                                                        <span class="_ed4374-buttonWrapper _ed4374-headerButton _ed4374-btnIgnore"
+                                                                            role="button"></span>-->
+                                                                    </div>
+                                                                    <div id="show-box" >
+                                                                        <div id="show-text" style="padding-left: 10px;">
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--
+                                                                    <div class="_ed4374-title" data-name="title">
+                                                                        <div class="_ed4374-titleReplacement">
+                                                                            <div class="_929504-replacement">
+                                                                            <div class="_929504-dropDownReplacement _929504-collapsedDropDownReplacement">
+                                                                                    <div class="_929504-singleReplacement">
+                                                                                        <span class="_929504-insertReplacement">
+                                                                                            <span class="_929504-deletePart">
+                                                                                                <span>
+                                                                                                
+                                                                                                    <span class="_929504-bold">a </span>
+                                                                                                 girls
+                                                                                             
+                                                                                                </span>
+                                                                                            </span>
+                                                                                            <span class="_929504-arrowPart">
+                                                                                            → </span>
+                                                                                            <span class="_929504-insertPart">
+                                                                                                <span>
+                                                                                                  
+                                                                                                    <span class="_929504-bold"></span>
+                                                                                                 girls
+                                                                                               
+                                                                                                </span>
+                                                                                            </span>
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="_929504-dropDown _929504-hoverDropDown">
+                                                                                        <span class="_929504-dropDownSizer">
+                                                                                            <span class="_929504-deleteReplacement">
+                                                                                                <span class="_929504-deletePart">
+                                                                                                    <span>a girls</span>
+                                                                                                </span>
+                                                                                                <span class="_929504-arrowPart">
+                                                                                                → </span>
+                                                                                            </span>
+                                                                                        </span>
+                                                                                        <div class="_929504-dropDownWrap">
+                                                                                            <span class="_929504-insertReplacement">
+                                                                                                <span class="_929504-insertPart">
+                                                                                                    <span>a girl</span>
+                                                                                                </span>
+                                                                                            </span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                    
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>-->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cardBaseClassName _72569e-card _72569e-cardCollapsed _72569e-animatePosition">
+                                                        <div>
+                                                            <div>
+                                                                <div class="_ed4374-header">
+                                                                    <div class="_ed4374-headerButtons">
+                                                                        <!--<span class="_ed4374-buttonWrapper _ed4374-headerButton _ed4374-btnExpand"
+                                                                            role="button"></span>
+                                                                        <span class="_ed4374-buttonWrapper _ed4374-headerButton _ed4374-btnIgnore"
+                                                                            role="button"></span>-->
+                                                                    </div>
+                                                                    <div class="_ed4374-title" data-name="title">
+                                                                        <div class="_ed4374-plainTextTitle"  >&nbsp&nbsp Suggestions </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                   
+                                </div>
+                            </div>
+                        
+                       <!-- <div class="_ff9902-toolbarWrap">
+                            <div class="_ff9902-toolbar">
+                                <div class="_ff9902-editorCol">
+                                    <div class="_ff9902-genre">General (default)</div>
+                                    <div class="_ff9902-stats">
+                                        <div data-name="text-stats">
+                                            <span>3 WORDS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="_ff9902-statsCol">
+                                    <div class="_ff9902-statsWrap 0">
+                                        <span class="_ff9902-critical">
+                                            <span class="_ff9902-value">1</span>-->
+                                            <!-- react-text: 1264 --><!--CRITICAL-->
+                                            <!-- /react-text -->
+                                            <!-- react-text: 1265 -->
+                                            <!-- /react-text -->
+                                            <!-- react-text: 1266 --><!--ISSUE-->
+                                            <!-- /react-text -->
+                                       <!-- </span>
+                                        <span class="_ff9902-premium">
+                                            <span class="_ff9902-value">1</span>-->
+                                            <!-- react-text: 1269 --><!--ADVANCED-->
+                                            <!-- /react-text -->
+                                            <!-- react-text: 1270 -->
+                                            <!-- /react-text -->
+                                            <!-- react-text: 1271 --> <!--ISSUE-->
+                                            <!-- /react-text -->
+                                       <!-- </span>
+                                        <span class="_ff9902-score">-->
+                                            <!-- react-text: 1273 --> <!--SCORE:-->
+                                            <!-- /react-text -->
+                                          <!--  <span class="_ff9902-value">0</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                       <!-- <div role="tooltip">
+                            <div class="_0f3db3bb-tooltip-tooltip" style="top: 0px; left: 0px; opacity: 0; transition: none;"></div>
+                        </div>-->
+                    </div>
+                </div>
+                <div></div>
+                <div></div>
+                <div>
+                    <!-- react-empty: 797 -->
+                </div>
+           
+       
+   
+    </div>
+    </div>
+    </div>
+        <!-- Scripts -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/skel.min.js' %}"></script>
+        <script src="{% static 'js/util.js' %}"></script>
+        <script src="{% static 'js/work.js' %}"></script>
+        <script src="{% static 'js/bar.js' %}"></script>
+
+
+
+
+</body>
+
+</html>
