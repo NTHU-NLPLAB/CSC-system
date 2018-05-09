@@ -17,16 +17,11 @@ from django.contrib import admin
 from django.urls import path
 
 from index.views import index
-from csc.views import correct_it, check_it
+from csc.views import correct_it
 
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('translate/', correct_it),
-#     path('', index),
-# ]
 
 urlpatterns = [
     path('csc/admin/', admin.site.urls),
-    path('csc/translate/', check_it),
+    path('csc/translate/', correct_it),
     path('csc/', index),
 ]
